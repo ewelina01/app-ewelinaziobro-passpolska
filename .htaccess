@@ -1,18 +1,14 @@
 
 ### PROTECT FILES ###
-<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh|env)$">
-Order Allow,Deny
-Deny from all
-</FilesMatch>
+#<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh|env)$">
+#Order Allow,Deny
+#Deny from all
+#</FilesMatch>
 
 <FilesMatch "\.(jpg|jpeg|png|gif|js|css)$">
 Header set Cache-Control "max-age=31536000, public"
 </FilesMatch>
 
-<FilesMatch "\.json$">
- Order deny,allow
- Deny from all
-</FilesMatch>
 
 
 RewriteEngine on
