@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Kalkulator powierzchni i obwodu{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<h1></h1>
+
+<h2>Przejdź do kalkulatorów</h2>
+
+<ul>
+    <li><a href="{{path('app_calculate_circle')}}">Kalkulator powierzchni i obwodu koła</a></li>
+    <li><a href="{{path('app_calculate_rectangle')}}">Kalkulator powierzchni i obwodu prostokąta</a></li>
+    <li><a href="{{path('app_calculate_square')}}">Kalkulator powierzchni i obwodu kwadratu</a></li>
+</ul>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Kalkulator powierzchni i obwodu{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<a href="{{path('app_index')}}"> &lt;- Powrót do strony głównej</a>
+
+<h1>Kalkulator powierzchni i obwodu koła</h1>
+
+
+{{ form_start(circleForm) }}
+
+    {{form_label(circleForm.radius)}}
+    {{form_widget(circleForm.radius)}}
+    {% if form_errors(circleForm.radius) %}
+        <div class="error">{{ form_errors(circleForm.radius) }}</div>
+    {% endif %}
+
+    <br/><br/>
+
+    <button type="submit">Oblicz</button>
+{{ form_end(circleForm) }}
+
+<br/><br/>
+
+{{circle.surface and circle.perimeter ? "<h2>Wyniki</h2>" : "" }}
+
+{% if circle.surface %}
+    Powierzchnia: {{circle.surface}}  mm<sup>2</sup>
+{% endif %}
+<br/><br/>
+
+{% if circle.perimeter %}
+    Obwód: {{circle.perimeter}}  mm
+{% endif %}
+
+
+
+
+<br/><br/>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,119 @@
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+/* START GLOBAL STYLES */
+/* Global style --------------- */
+:root {
+    scroll-behavior: smooth;
+}
+
+
+html,
+body {
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+	background-color: #fff;
+    color: black;
+    padding: 0px;
+    margin: 0;
+    word-break: break-word;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 800;
+    margin: 2rem auto;
+}
+
+h2 {
+    font-size: 1.8rem;
+    line-height:2.8rem;
+    font-weight: 700;
+    margin:1.5rem auto;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 1.5rem auto;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1.4rem auto;
+}
+
+h5 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1.2rem auto;
+}
+
+h6 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1.1rem auto;
+}
+
+p {
+    line-height: 3rem;
+    font-size: 1.4rem;
+    margin: 1.4rem auto;
+}
+
+strong {
+    font-size: inherit;
+}
+
+ul{
+    padding-left:20px;
+    margin-left:10px;
+    list-style-type:disc;
+}
+
+li {
+    margin: 1.2rem 0px;
+    line-height: 2.6rem;
+    font-size:1.4rem;
+}
+
+input, textarea, select{
+    border: 1px solid #343434;
+}
+
+button, [type='button'], [type='reset'], [type='submit']{
+    padding:10px 20px;
+    border:1px solid #343434;
+    background-color:#000;
+    color:#fff;
+    border-radius:5px;
+}
+
+main{
+    padding:40px;
+    box-sizing:border-box;
+}
+
+.error, .error ul, .error li{
+    list-style-type:none;
+    font-size:0.8rem;
+    color:red;
+    padding:0;
+    margin:0;
+}

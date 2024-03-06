@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Kalkulator powierzchni i obwodu{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<a href="{{path('app_index')}}"> &lt;- Powrót do strony głównej</a>
+
+<h1>Kalkulator powierzchni i obwodu kwadratu</h1>
+
+
+{{ form_start(squareForm) }}
+
+    {{form_label(squareForm.a)}}
+    {{form_widget(squareForm.a)}}
+    {% if form_errors(squareForm.a) %}
+        <div class="error">{{ form_errors(squareForm.a) }}</div>
+    {% endif %}
+
+    <br/><br/>
+
+    <button type="submit">Oblicz</button>
+{{ form_end(squareForm) }}
+
+
+{{square.surface and square.perimeter ? "<h2>Wyniki</h2>" : "" }}
+
+{% if square.surface %}
+    Powierzchnia: {{square.surface}}  mm<sup>2</sup>
+{% endif %}
+<br/><br/>
+
+{% if square.perimeter %}
+    Obwód: {{square.perimeter}}  mm
+{% endif %}
+
+
+
+
+{% endblock %}

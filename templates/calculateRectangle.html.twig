@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Kalkulator powierzchni i obwodu{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<a href="{{path('app_index')}}"> &lt;- Powrót do strony głównej</a>
+
+<h1>Kalkulator powierzchni i obwodu prostokąta</h1>
+
+
+{{ form_start(rectangleForm) }}
+    {{form_label(rectangleForm.a)}}
+    {{form_widget(rectangleForm.a)}}
+    {% if form_errors(rectangleForm.a) %}
+        <div class="error">{{ form_errors(rectangleForm.a) }}</div>
+    {% endif %}
+
+    <br/><br/>
+
+    {{form_label(rectangleForm.b)}}
+    {{form_widget(rectangleForm.b)}}
+    {% if form_errors(rectangleForm.b) %}
+        <div class="error">{{ form_errors(rectangleForm.b) }}</div>
+    {% endif %}
+
+    <br/><br/>
+
+    <button type="submit">Oblicz</button>
+{{ form_end(rectangleForm) }}
+
+
+{{rectangle.surface and rectangle.perimeter ? "<h2>Wyniki</h2>" : "" }}
+
+{% if rectangle.surface %}
+    Powierzchnia: {{rectangle.surface}}  mm<sup>2</sup>
+{% endif %}
+<br/><br/>
+
+{% if rectangle.perimeter %}
+    Obwód: {{rectangle.perimeter}}  mm
+{% endif %}
+
+
+
+{% endblock %}
