@@ -15,52 +15,32 @@
 
 {{ form_start(keyboardForm) }}
 
-    {{form_label(keyboardForm.word)}}
-    {{form_widget(keyboardForm.word)}}
-    {% if form_errors(keyboardForm.word) %}
-        <div class="error">{{ form_errors(keyboardForm.word) }}</div>
-    {% endif %}
-
-    <br/><br/>
-
-    {{form_label(keyboardForm.combinations)}} <br/>
-    {{form_widget(keyboardForm.combinations)}}
-    {% if form_errors(keyboardForm.combinations) %}
-        <div class="error">{{ form_errors(keyboardForm.combinations) }}</div>
-    {% endif %}
-
-    {#% for child in keyboardForm.combinations %}
-
-        {% for c in child %}
-
-        <div>
-            {{ form_widget(c) }}
-            {{ form_label(c) }}
-        </div>
-        {% if form_errors(c) %}
-            <div class="error">{{ form_errors(c) }}</div>
+    <div>
+        {{form_label(keyboardForm.word)}}
+        {{form_widget(keyboardForm.word)}}
+        {% if form_errors(keyboardForm.word) %}
+            <div class="error">{{ form_errors(keyboardForm.word) }}</div>
         {% endif %}
+    </div>
 
-        {% endfor %}
 
-    {% endfor %#}
+    <div>
+        <div>{{form_label(keyboardForm.combinations)}}</div>
+        <div>{{form_widget(keyboardForm.combinations)}}</div>
+        {% if form_errors(keyboardForm.combinations) %}
+            <div class="error">{{ form_errors(keyboardForm.combinations) }}</div>
+        {% endif %}
+    </div>
 
-    {#{form_label(keyboardForm.combinations)}}
-    {{form_widget(keyboardForm.combinations)}}
-    {% if form_errors(keyboardForm.combinations) %}
-        <div class="error">{{ form_errors(keyboardForm.combinations) }}</div>
-    {% endif %#}
-
-    <br/><br/>
-
-    <button type="submit">Rozszyfruj</button>
+    <div>
+        <button type="submit">Rozszyfruj</button>
+    </div>
 {{ form_end(keyboardForm) }}
 
-<br/><br/>
-
+<br/>
 {{keyboard.decodedWord ? "<h2>Wynik</h2>" : "" }}
 
-{% if keyboard.word %}
+{% if keyboard.decodedWord %}
     Twoje słowo na podanej klawiaturze to: {{keyboard.decodedWord}}
 {% endif %}
 <br/><br/>

@@ -61,7 +61,7 @@ class Keyboard
         return $this->combinations;
     }
 
-    public function setCombinations(string $combinations): static
+    public function setCombinations(?string $combinations): static
     {
         $this->combinations = $combinations;
 
@@ -73,15 +73,17 @@ class Keyboard
         return $this->decodedWord;
     }
 
-    public function setDecodedWord(string $word, array $combinations)
+    public function setDecodedWord(string $word, string $combinations)
     {
+        $combinations_decode = json_decode($combinations, true);
+
         $wordLen = strlen($word);
 
         $result ='';
 
         for($i=0; $i<$wordLen;$i++){
 
-            foreach($combinations AS $key => $arr){
+            foreach($combinations_decode AS $key => $arr){
 
                 foreach($arr AS $k => $val){
                     if($val==$word[$i]) {

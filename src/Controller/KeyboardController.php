@@ -28,10 +28,10 @@ class KeyboardController extends AbstractController
 
         $keyboardForm->handleRequest($request);
 
-        $word = $keyboardForm->get('word')->getData();
-        $combinations = json_decode($keyboardForm->get('combinations')->getData(), true);
-
         if ($keyboardForm->isSubmitted() && $keyboardForm->isValid() ) {
+
+            $word = $keyboardForm->get('word')->getData();
+            $combinations = $keyboardForm->get('combinations')->getData();
 
             $keyboard->setDecodedWord($word, $combinations);
 
