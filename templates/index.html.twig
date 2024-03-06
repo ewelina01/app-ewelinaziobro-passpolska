@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Kalkulator powierzchni i obwodu{% endblock %}
+{% block title %}Ewelina Ziobro{% endblock %}
 
 {% block head %}
 
@@ -17,6 +17,15 @@
     <li><a href="{{path('app_calculate_rectangle')}}">Kalkulator powierzchni i obwodu prostokąta</a></li>
     <li><a href="{{path('app_calculate_square')}}">Kalkulator powierzchni i obwodu kwadratu</a></li>
 </ul>
+
+<h2>API</h2>
+
+<p>GET - /api/products - wyświetla wszystkie produkty z bazy</p>
+<p>GET - /api/products/{id} - wyświetla dane produktu o podanym id</p>
+<p>POST - /api/products - dodaje produkt do bazy za podaniem danych: name, type, price, unit</p>
+<p>PATCH - /api/products/{id} - aktualizuje cenę produktu o podanym id</p>
+<p>DELETE - /api/products/{id} - usuwa produkt z bazy</p>
+
 
 <h2>Klawiatura</h2>
 
