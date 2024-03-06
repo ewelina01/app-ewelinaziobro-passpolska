@@ -1,0 +1,76 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Rozszyfruj kombinację klawiatury{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<a href="{{path('app_index')}}"> &lt;- Powrót do strony głównej</a>
+
+<h1>Rozszyfruj słowo z klawiatury</h1>
+
+
+{{ form_start(keyboardForm) }}
+
+    {{form_label(keyboardForm.word)}}
+    {{form_widget(keyboardForm.word)}}
+    {% if form_errors(keyboardForm.word) %}
+        <div class="error">{{ form_errors(keyboardForm.word) }}</div>
+    {% endif %}
+
+    <br/><br/>
+
+    {{form_label(keyboardForm.combinations)}} <br/>
+    {{form_widget(keyboardForm.combinations)}}
+    {% if form_errors(keyboardForm.combinations) %}
+        <div class="error">{{ form_errors(keyboardForm.combinations) }}</div>
+    {% endif %}
+
+    {#% for child in keyboardForm.combinations %}
+
+        {% for c in child %}
+
+        <div>
+            {{ form_widget(c) }}
+            {{ form_label(c) }}
+        </div>
+        {% if form_errors(c) %}
+            <div class="error">{{ form_errors(c) }}</div>
+        {% endif %}
+
+        {% endfor %}
+
+    {% endfor %#}
+
+    {#{form_label(keyboardForm.combinations)}}
+    {{form_widget(keyboardForm.combinations)}}
+    {% if form_errors(keyboardForm.combinations) %}
+        <div class="error">{{ form_errors(keyboardForm.combinations) }}</div>
+    {% endif %#}
+
+    <br/><br/>
+
+    <button type="submit">Rozszyfruj</button>
+{{ form_end(keyboardForm) }}
+
+<br/><br/>
+
+{{keyboard.decodedWord ? "<h2>Wynik</h2>" : "" }}
+
+{% if keyboard.word %}
+    Twoje słowo na podanej klawiaturze to: {{keyboard.decodedWord}}
+{% endif %}
+<br/><br/>
+
+
+
+
+<br/><br/>
+
+
+
+
+{% endblock %}
